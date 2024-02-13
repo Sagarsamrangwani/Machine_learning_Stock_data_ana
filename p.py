@@ -25,10 +25,6 @@ def stock_price_prediction(data):
     plt.legend()
     plt.show()
 
-    # Calculate train accuracy
-    train_predictions = model.predict(train_data[['Close']])
-    train_accuracy = accuracy_score(train_data['Target'], train_predictions > train_data['Close'])
-    print(f"Train Accuracy: {train_accuracy}")
 
 # Function for classification - Buy/Sell signals
 def classification_buy_sell_signals(data):
@@ -89,7 +85,7 @@ print("3. Technical Indicator Analysis")
 choice = int(input("Enter the number of your choice: "))
 
 # Fetch stock data
-csv_filename = 'AAPL_stock_data.csv' # Replace with your actual CSV file
+csv_filename = 'BTC_stock_data.csv' # Replace with your actual CSV file
 stock_data = pd.read_csv(csv_filename)
 stock_data['Date'] = pd.to_datetime(stock_data['Date'])
 stock_data.set_index('Date', inplace=True)
